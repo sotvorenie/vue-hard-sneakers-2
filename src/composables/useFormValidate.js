@@ -47,6 +47,15 @@ function onBlur(event) {
         validateField(target)
     }
 }
+function onChange(event) {
+    const { target } = event
+    const isRequired = target.required
+    const isToggleType = ['radio', 'checkbox'].includes(target.type)
+
+    if (isToggleType && isRequired) {
+        this.validateField(target)
+    }
+}
 function onSubmit(event) {
     const isFormElement = event.target.matches(selectors.form)
     if (!isFormElement) {
@@ -75,4 +84,4 @@ function onSubmit(event) {
     } else return true;
 }
 
-export {onBlur, onSubmit}
+export {onBlur, onSubmit, onChange}
