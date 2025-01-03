@@ -1,0 +1,44 @@
+.st-4 {
+  background: var(--color-blue);
+  position: relative;
+  color: var(--color-light);
+  z-index: 0;
+
+  svg {
+    position: absolute;
+    width: 28%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 40px;
+
+    @include mobile {
+      column-gap: 15px;
+      row-gap: 25px;
+    }
+
+    @include mobile-s {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include mobile {
+      gap: 10px;
+    }
+
+    p, h3 {
+      line-height: 1;
+    }
+  }
+}

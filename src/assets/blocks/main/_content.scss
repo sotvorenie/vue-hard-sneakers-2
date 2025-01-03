@@ -1,0 +1,13 @@
+.content {
+  section {
+    padding-block: var(--section-padding-y);
+  }
+
+  .section-title {
+    margin-bottom: 40px;
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
+  }
+}

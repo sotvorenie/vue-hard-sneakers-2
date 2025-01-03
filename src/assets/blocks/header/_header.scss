@@ -1,0 +1,128 @@
+@use '../../helpers' as *;
+
+.header {
+  background: var(--color-blue);
+  color: var(--color-light);
+  position: relative;
+  z-index: 0;
+
+  &__bg-text {
+    font-size: rem(200);
+    font-family: var(--font-family-bold);
+    color: var(--color-light);
+    opacity: 12%;
+    line-height: 1;
+    position: absolute;
+    translate: -50% -50%;
+    left: 50%;
+    top: 63%;
+    z-index: -1;
+
+    @include desktop {
+      font-size: rem(140);
+    }
+  }
+
+  p, h2 {
+    line-height: 1;
+  }
+
+  &__inner {
+    padding-top: rem(20);
+    padding-bottom: rem(100);
+
+    @include tablet {
+      padding-bottom: rem(50);
+    }
+
+    @include mobile {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 20px;
+    margin-bottom: 100px;
+    gap: 15px;
+
+    @include tablet {
+      margin-bottom: 50px;
+      flex-direction: column;
+    }
+
+    @include mobile {
+      margin-bottom: 20px;
+      flex-direction: row;
+    }
+  }
+
+  &__info {
+    max-width: 580px;
+
+    @include mobile {
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    line-height: 50.4px;
+    margin-bottom: 20px;
+
+    @include mobile {
+      line-height: 1.5;
+    }
+  }
+  &__text {
+    line-height: 22.4px !important;
+    margin-bottom: 40px;
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__burger-icon {
+    @include reset_button;
+    @include square(40px);
+
+    cursor: pointer;
+    color: var(--color-light);
+    z-index: 110;
+    position: relative;
+
+    @include hover {
+      color: var(--color-accent);
+    }
+
+    span {
+      @include abs-center;
+
+      width: 75%;
+      height: 4px;
+      border-radius: 5px;
+      background: var(--color-light);
+      position: absolute;
+      rotate: 45deg;
+      margin-top: -3px;
+
+      &:nth-child(2) {
+        rotate: 135deg;
+      }
+    }
+
+    svg {
+      path {
+        stroke: currentColor;
+      }transition-duration: .1s;
+    }
+
+    .is-hidden {
+      opacity: 0;
+
+    }
+  }
+}

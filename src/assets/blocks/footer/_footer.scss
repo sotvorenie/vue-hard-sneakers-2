@@ -1,0 +1,52 @@
+.footer {
+  background: var(--color-dark);
+  color: var(--color-light);
+
+  &__inner {
+    padding-block: 33px;
+
+    @include mobile-s {
+      padding-block: 20px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    @include desktop {
+      gap: 20px;
+    }
+
+    @include tablet {
+      gap: 15px;
+    }
+
+    @include mobile {
+      width: 100%;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  &__link {
+    font-size: 14px;
+    white-space: nowrap;
+
+    @include hover {
+      color: var(--color-accent);
+    }
+  }
+}

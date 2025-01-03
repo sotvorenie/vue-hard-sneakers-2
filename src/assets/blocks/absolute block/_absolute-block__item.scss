@@ -1,0 +1,81 @@
+@use '../../helpers' as *;
+
+.absolute-block__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: rem(10) rem(10);
+
+  @include hover {
+    background: rgba(204, 217, 242, 0.2);
+  }
+
+  @include mobile {
+    padding: rem(10);
+  }
+
+  p {
+    color: var(--color-dark-alt);
+  }
+
+  &-content {
+    display: flex;
+    align-items: center;
+    gap: rem(10);
+  }
+
+  &-container {
+    --size: #{rem(100)};
+
+    @include square(var(--size));
+
+    overflow: hidden;
+    flex-shrink: 0;
+
+    img {
+      object-fit: cover;
+      object-position: center 80%;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &-info {
+    max-width: 268px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    & span {
+      line-height: 1;
+    }
+
+    & p {
+      margin: 0;
+    }
+
+    @include mobile-s {
+      padding-right: 10px;
+    }
+  }
+
+  &-delete-btn {
+    @include reset_button;
+    @include square(20px);
+
+    cursor: pointer;
+    color: var(--color-dark-alt);
+    margin-right: 11px;
+    min-width: 20px;
+
+    svg {
+      path {
+        stroke: currentColor;
+      }
+    }
+
+    @include hover {
+      color: var(--color-accent);
+    }
+  }
+}

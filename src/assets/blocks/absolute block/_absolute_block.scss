@@ -1,0 +1,15 @@
+.absolute-block {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1010;
+  background: rgba(68, 75, 88, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: calc(var(--container-padding-x) / 2);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-inline: var(--container-padding-x);
+}

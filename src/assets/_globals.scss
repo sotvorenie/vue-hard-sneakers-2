@@ -1,0 +1,73 @@
+//прозрачный эффект выделения
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    @include fluid_text(18, 16);
+
+    font-family: var(--font-family-base);
+    font-weight: 400;
+    line-height: 1.28;
+    color: var(--color-dark);
+    border-color: var(--color-light);
+    overflow-x: hidden;
+}
+
+//чтобы не было никакой прокрутки на странице (когда, например, открывается бургер-меню)
+.body-overflow-hidden {
+    overflow: hidden;
+}
+
+//чтобы не перекрывал нажатие на ссылки в бургер-меню
+.st-1--z-index {
+    z-index: -1;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+}
+
+body * {
+    transition-duration: var(--transition-duration);
+}
+
+a, button, textarea, svg * {
+    transition-duration: var(--transition-duration);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+p, button, span {
+    font-size: 16px;
+}
+
+h1, h3, h4 {
+    font-weight: 400;
+}
+
+h1, .h1 {
+    @include fluid_text(36, 20);
+}
+
+h2, .h2 {
+    @include fluid_text(30, 26);
+
+    font-weight: 700;
+}
+
+h3, .h3 {
+    @include fluid_text(24, 22);
+}
+
+h4, .h4 {
+    @include fluid_text(20, 18);
+}
+
+p {
+    margin: 0;
+}

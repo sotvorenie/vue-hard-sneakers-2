@@ -1,0 +1,147 @@
+.catalog {
+  min-height: 500px;
+  margin-bottom: 40px;
+
+  &__loading {
+    top: 30%;
+    left: 60%;
+    translate: -50% -50%;
+
+    @include mobile {
+      left: 50%;
+    }
+  }
+
+  &__error {
+    @include abs-center;
+    @include fluid_text(32, 18);
+
+    left: 60%;
+    display: none;
+  }
+
+  &__list {
+    --gap: 20px;
+
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: repeat(3, calc(100% / 3 - var(--gap) / 2));
+    margin-bottom: 40px;
+
+    @include mobile-s {
+      --gap: 10px;
+      grid-template-columns: repeat(2, calc(50% - var(--gap) / 2));
+    }
+  }
+
+  &__absolute {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.6);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    scale: 0;
+    border-radius: 50%;
+    transition-duration: .4s;
+
+    @include mobile {
+      gap: 20px;
+    }
+
+    @include mobile-s {
+      gap: 10px;
+    }
+
+    &--active {
+      scale: 1;
+      border-radius: 0;
+    }
+
+    &-item {
+      @include square(80px);
+
+      background: var(--color-dark);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      color: var(--color-light);
+
+      @include hover {
+        color: var(--color-accent);
+        background: var(--color-light);
+        outline: 1px solid var(--color-dark);
+      }
+
+      svg {
+        width: 30px;
+
+        path {
+          stroke: currentColor !important;
+          fill: none;
+        }
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+
+    @include tablet-above {
+      @include hover {
+        transform: translate(10px, -10px);
+        box-shadow: -10px 10px 20px rgba(0, 0, 0, .2);
+        outline: 1px solid var(--color-brown);
+      }
+    }
+  }
+  &__container {
+    height: 100%;
+    width: 100%;
+    max-height: 293px;
+    margin-bottom: 10px;
+    aspect-ratio: 280/293;
+    border-radius: var(--border-radius);
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      object-position: center 80%;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &-btn {
+    margin-inline: auto;
+    position: relative;
+
+    &__loading {
+      color: var(--color-light);
+      scale: .8;
+      top: 45%;
+      left: 44%;
+    }
+  }
+
+  &-title {
+    margin-bottom: 10px;
+  }
+  &-price {
+    font-size: 20px;
+  }
+}

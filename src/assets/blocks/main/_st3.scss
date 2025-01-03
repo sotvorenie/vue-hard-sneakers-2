@@ -1,0 +1,138 @@
+.st-3 {
+
+  &__inner {
+    padding: 40px 100px;
+
+    @include tablet {
+      padding: var(--section-padding-y) var(--container-padding-x);
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+  &__text {
+    color: var(--color-dark-alt);
+    margin-bottom: 10px;
+  }
+
+  &__swiper {
+    //max-height: 432px;
+    margin-bottom: 20px;
+    border-top: 1px solid var(--color-dark-alt);
+    border-bottom: 1px solid var(--color-dark-alt);
+
+    @include mobile {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &--error {
+      color: red;
+      margin-bottom: 5px;
+    }
+  }
+  &__steps {
+    display: flex;
+    color: var(--color-dark-alt);
+    gap: 5px;
+  }
+
+  &__second {
+
+    &-text {
+      color: var(--color-brown);
+      border-bottom: 1px solid var(--color-brown);
+      padding-bottom: 24px;
+    }
+
+    &-form {
+      padding: 40px 90px 40px 40px;
+      background: var(--color-brown);
+      border-radius: var(--border-radius);
+      max-width: 655px;
+      color: var(--color-light);
+      position: relative;
+      display: flex;
+
+      @include mobile {
+        width: 100%;
+        max-width: none;
+        padding: 20px;
+      }
+
+      h1 {
+        margin-bottom: 10px;
+      }
+      p {
+        margin-bottom: 24px;
+      }
+
+      &-inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+
+        span {
+          color: red;
+        }
+      }
+
+      input {
+        width: 100%;
+        height: 60px;
+        outline: none;
+        border: none;
+        border-radius: var(--border-radius);
+        padding-inline: 20px;
+
+        &:hover {
+          box-shadow: 0 0 5px var(--color-light);
+        }
+        &:focus {
+          outline: 1px solid var(--color-accent);
+        }
+
+        &::placeholder {
+          color: var(--color-dark-alt);
+        }
+      }
+    }
+
+    &-device {
+
+      img {
+        position: absolute;
+        top: -8px;
+        right: -20%;
+        max-width: 205px;
+        max-height: 411px;
+
+        &:nth-child(2) {
+          right: -19%;
+          scale: .94;
+          top: -11px;
+
+          @include mobile {
+            right: -3.8%;
+          }
+        }
+
+        @include mobile {
+          right: -5%;
+        }
+      }
+    }
+  }
+}

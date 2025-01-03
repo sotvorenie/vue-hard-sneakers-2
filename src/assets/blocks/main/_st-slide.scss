@@ -1,0 +1,108 @@
+.st-slide {
+  padding-block: 20px;
+  height: auto !important;
+
+  &__title {
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 20px;
+    column-gap: 70px;
+
+    @include desktop {
+      column-gap: 30px;
+    }
+
+    @include tablet {
+      column-gap: 15px;
+      row-gap: 25px;
+    }
+
+    @include mobile {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 25px;
+    }
+
+    @include mobile-s {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 25px;
+    }
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include mobile {
+      width: calc(50% - 15px);
+    }
+
+    &-container {
+      width: 100%;
+      overflow: hidden;
+      border-radius: var(--border-radius);
+
+      @include hover {
+        & > img {
+          scale: 1.05;
+        }
+      }
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__checkbox-size {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 22px;
+    gap: 20px;
+
+    @include mobile {
+      flex-wrap: wrap;
+      justify-content: start;
+    }
+  }
+
+  &__second-container {
+    max-height: 295px;
+
+    @include mobile {
+      max-height: 500px;
+    }
+
+    img {
+      object-position: center;
+      object-fit: fill;
+    }
+  }
+
+  &__textarea {
+    padding: 20px;
+    //min-width: 465px;
+    //max-width: 465px;
+    min-height: 246px;
+    height: 100%;
+    max-height: 90%;
+    //max-height: 246px;
+    width: 100%;
+    resize: none;
+    outline: none;
+    border: none;
+
+    &::placeholder {
+      color: var(--color-brown);
+      font-size: 16px;
+    }
+  }
+}

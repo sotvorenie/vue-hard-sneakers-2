@@ -1,0 +1,31 @@
+.st-1 {
+  color: var(--color-dark);
+  position: relative;
+
+  &__content {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__filters-btn {
+    @include reset_button;
+    @include square(30px);
+
+    color: var(--color-dark);
+    cursor: pointer;
+    position: absolute;
+    translate: -50% -50%;
+    top: 45px;
+    right: 15px;
+
+    @include hover {
+      color: var(--color-accent);
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.checkbox {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+
+  @include hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+
+  div {
+    @include square(24px);
+
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-brown);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-brown);
+
+    @include hover {
+      color: var(--color-accent);
+      border-color: var(--color-accent);
+    }
+
+    svg {
+      width: 70%;
+    }
+  }
+
+  input {
+    @include visually-hidden;
+  }
+}
+
+input:not(:checked) ~ div > svg {
+  @include visually-hidden;
+}

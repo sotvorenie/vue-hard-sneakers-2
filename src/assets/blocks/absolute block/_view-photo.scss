@@ -1,0 +1,36 @@
+:root {
+  --top: 0;
+  --left: 0;
+  --width: 0;
+}
+
+.view-photo {
+  aspect-ratio: 1;
+  position: absolute;
+  translate: -50% -50%;
+
+  img {
+    object-fit: fill;
+    width: 100%;
+    height: auto;
+  }
+
+  &--active {
+    animation: animation-view-photo .2s ease-in-out 0s forwards normal;
+  }
+}
+
+@keyframes animation-view-photo {
+  from {
+    top: var(--top);
+    left: var(--left);
+    width: var(--width);
+    outline: none;
+  }
+  to {
+    top: 50%;
+    left: 50%;
+    outline: 1px solid var(--color-light);
+    width: min(500px, 90%);
+  }
+}

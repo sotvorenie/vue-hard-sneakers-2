@@ -1,0 +1,47 @@
+.image-container {
+  background: var(--color-dark-alt);
+  position: relative;
+  overflow: hidden;
+  background: var(--color-dark-alt);
+
+  &::before {
+    content: '';
+    height: 100%;
+    width: 10%;
+    background: var(--color-light);
+    opacity: 30%;
+    box-shadow: 0 0 20px 10px var(--color-light);
+    position: absolute;
+    left: 50%;
+    top: 0;
+    animation: loading-image-animation 2s ease-in-out infinite;
+    z-index: 20;
+    display: none;
+  }
+
+  &::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    inset: 0 0;
+    background: var(--color-dark-alt);
+    z-index: 10;
+    display: none;
+  }
+
+  @keyframes loading-image-animation {
+    from {
+      left: -25%;
+    }
+    to {
+      left: 110%;
+    }
+  }
+
+  &--active {
+    &::before, &::after {
+      display: block;
+    }
+  }
+}

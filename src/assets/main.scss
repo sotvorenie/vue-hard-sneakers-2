@@ -1,0 +1,60 @@
+@import
+  'normalize',
+  'mixins',
+  'media',
+  'fonts',
+  'variables',
+  'globals',
+  'utils';
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent) var(--color-dark-alt);
+}
+
+/* для Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  height: 12px;
+  width: 12px;
+}
+*::-webkit-scrollbar-track {
+  background: var(--color-dark-alt);
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-accent);
+  border-radius: 5px;
+  border: 3px solid var(--color-dark);
+}
+
+.body--absolute {
+  height: 100%;
+  overflow: hidden;
+}
+
+@import
+  'blocks/loading',
+  'image-container',
+  'blocks/logo',
+  'blocks/button',
+  'blocks/checkbox',
+  'blocks/absolute block/absolute_block',
+  'blocks/absolute block/absolute-block__item',
+  'blocks/absolute block/cart',
+  'blocks/absolute block/order',
+  'blocks/absolute block/sneaker-info',
+  'blocks/absolute block/view-photo',
+  'blocks/header/header',
+  'blocks/header/header-menu',
+  'blocks/main/content',
+  'blocks/main/st1',
+  'blocks/main/filters',
+  'blocks/main/catalog',
+  'blocks/main/st2',
+  'blocks/main/st3',
+  'blocks/main/st-slide',
+  'blocks/main/st4',
+  'blocks/main/st4-member',
+  'blocks/main/st5',
+  'blocks/main/st6',
+  'blocks/main/st7',
+  'blocks/footer/footer';

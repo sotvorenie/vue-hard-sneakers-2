@@ -1,0 +1,28 @@
+:root {
+    --color-dark: rgba(68, 75, 88, 1);
+    --color-dark-alt: rgba(178, 181, 187, 1);
+    --color-light: rgba(255, 244, 238, 1);
+    --color-accent: rgba(241, 79, 79, 1);
+    --color-blue: rgba(72, 66, 131, 1);
+    --color-green: rgba(14, 90, 76, 1);
+    --color-brown: rgba(219, 187, 169, 1);
+
+    --border-radius: 4px;
+
+    --shadow: 2px 4px 10px 0 rgba(0, 13, 84, 0.2);
+
+    --font-family-base: 'Intro-Regular', sans-serif;
+    --font-family-book: 'Intro-Book', sans-serif;
+    --font-family-bold: 'Intro-Bold', sans-serif;
+
+    --container-width: 1180px;
+    --container-padding-x: 20px;
+
+    --section-padding-y: 60px;
+
+    --transition-duration: 0.2s;
+
+    @include mobile {
+        --section-padding-y: 20px;
+    }
+}
